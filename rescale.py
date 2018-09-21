@@ -26,7 +26,7 @@ def read(args):
 
 
 def process(img, process_type, target_x=None, target_y=None):
-    image = color.rgb2gray(data.load(img))
+    image = data.load(img)
     processed_image = None
 
     if process_type == "rescale":
