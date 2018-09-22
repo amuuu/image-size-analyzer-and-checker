@@ -1,5 +1,5 @@
 # Fast Image Resizer
-A simple program to resize images.
+A simple program to resize images using scikit-image.
 ## How To Use
 Open terminal and run this command:
 ```
