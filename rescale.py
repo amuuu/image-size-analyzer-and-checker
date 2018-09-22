@@ -10,8 +10,15 @@ def read(args):
     img = args[1]
     process_type = args[2]
     if process_type == "rescale":
-        target_scale_x = float(args[3])
-        target_scale_y = float(args[3])
+        if "x=" or "x =" in args[3]:
+            target_scale_x = args[3]
+            target_scale_y = ""
+        elif "y=" or "y =" in args[3]:
+            target_scale_x = ""
+            target_scale_y = args[3]
+        else:
+            target_scale_x = float(args[3])
+            target_scale_y = float(args[3])
         return img, process_type, target_scale_x, target_scale_y
     elif process_type == "resize":
         target_x = float(args[3])
@@ -30,7 +37,13 @@ def process(img, process_type, target_x=None, target_y=None):
     processed_image = None
 
     if process_type == "rescale":
-        image_rescaled = rescale(image, target_x, anti_aliasing=False)
+        if "x=" in target_x:
+            target_scale = float(target_x.replace("x=", "")) / image.shape[0]
+        elif "y=" in target_y:
+            target_scale = float(target_y.replace("y=", "")) / image.shape[1]
+        else:
+            target_scale = target_x
+        image_rescaled = rescale(image, target_scale, anti_aliasing=False)
         processed_image = image_rescaled
     elif process_type == "resize":
         # image_resized = resize(image, (image.shape[0] / 4, image.shape[1] / 4),
