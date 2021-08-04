@@ -1,7 +1,12 @@
 # Fast Image Resizer
 A simple program to resize images using scikit-image.
 ## How To Use
-Open terminal and run this command:
+1) Install requirements
+```
+pip install -r requirements.txt
+```
+
+2) Open terminal and run this command:
 ```
 python main.py path/to/image.jpg PROCESS_TYPE TARGET_X TARGET_Y
 ```
