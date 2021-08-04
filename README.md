@@ -30,10 +30,10 @@ python main.py img.jpg rescale 0.25
 
 Resize image by given x and y:
 ```
-python main.py img.jpg 120 145
+python main.py img.jpg resize 120 145
 ```
 
 Downscale image by given scales in x and y:
 ```
-python main.py img.jpg 0.25 0.5
+python main.py img.jpg downscale 0.25 0.5
 ```
