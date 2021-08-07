@@ -1,5 +1,5 @@
 # Image Utility
-A simple program to resize images using scikit-image.
+A simple program to work wit images using scikit-image.
 
 # How to Use?
 

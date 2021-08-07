@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#######################
-
 if len(sys.argv) > 1:
     IMG_PATH = sys.argv[1]
     if not sys.argv[1].endswith("\\"):
@@ -14,7 +12,7 @@ if len(sys.argv) > 1:
 else:
     IMG_PATH = os.getenv('BASE_ASSETS_FOLDER_NAME')+"/"
 
-print("Checking this directory: " + IMG_PATH + "\n")
+print("DIRECTORY: " + IMG_PATH + "\n")
 
 #######################
 
@@ -37,7 +35,7 @@ for item in files:
     print(modify_str)
     print()
 
-
+#######################
 
 """"
 should_rescale = input("####\n\nWould you like the program to rescale images automatically? (y/n)\n")
