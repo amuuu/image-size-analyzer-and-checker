@@ -21,6 +21,7 @@ for (dirpath, dirnames, filenames) in walk(IMG_PATH):
     files.extend(filenames)
     break
 
+print_str = ""
 modify_dictionary = {}
 for item in files:
     size = get_size(IMG_PATH+item)
@@ -29,10 +30,13 @@ for item in files:
     
     modify_str, modify_tuple = check_size(size)
     
+    print_str = modify_str
+
     if modify_tuple != None:
         modify_dictionary[item] = modify_tuple
+        print_str = '\033[91m' + modify_str + '\033[0m' # the wierd characters are for coloring the print string in the terminal
     
-    print(modify_str)
+    print(print_str)
     print()
 
 #######################
