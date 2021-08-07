@@ -2,29 +2,30 @@ import sys
 from process import *
 from os import walk
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv()
 
 if len(sys.argv) > 1:
-    IMG_PATH = sys.argv[1]
-    if not sys.argv[1].endswith("\\"):
-        IMG_PATH += "\\"
+    IMG_PATH_INPUT_STR = sys.argv[1]
 else:
-    IMG_PATH = os.getenv('BASE_ASSETS_FOLDER_NAME')+"/"
+    IMG_PATH_INPUT_STR = os.getenv('BASE_ASSETS_FOLDER_NAME')
 
-print("DIRECTORY: " + IMG_PATH + "\n")
+IMG_PATH = Path(IMG_PATH_INPUT_STR)
+
+print("DIRECTORY: " + str(IMG_PATH) + "\n")
 
 #######################
 
 files = []
-for (dirpath, dirnames, filenames) in walk(IMG_PATH):
+for (dirpath, dirnames, filenames) in walk(str(IMG_PATH)):
     files.extend(filenames)
     break
 
 print_str = ""
 modify_dictionary = {}
 for item in files:
-    size = get_size(IMG_PATH+item)
+    size = get_size(str(IMG_PATH / item))
     
     print(str(size[1]) + "x" + str(size[0]) + " :::: " + item)
     

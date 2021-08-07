@@ -1,3 +1,4 @@
 scikit-image
 imgio
 python-dotenv
+pathlib

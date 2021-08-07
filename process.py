@@ -56,7 +56,7 @@ def process(img, process_type, target_x=None, target_y=None):
     return processed_image
 
 def get_size(img):
-    img_ = io.imread(img)
+    img_ = io.imread(img)   
     return img_.shape
 
 def save(img, directory):
