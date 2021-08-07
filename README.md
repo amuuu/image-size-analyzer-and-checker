@@ -18,4 +18,4 @@ You can also put the assets folder inside the same directory as the `main.py` an
 ```
 $ python main.py
 ```
-Make sure to specify the name of the assets folder inside the `.env. file. The default name for images folder is `imgs/`.
+Make sure to specify the name of the assets folder inside the `.env`. file. The default name for images folder is `imgs/`.
