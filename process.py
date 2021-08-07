@@ -51,7 +51,8 @@ def process(img, process_type, target_x=None, target_y=None):
     
     elif process_type == "downscale":
         processed_image = downscale_img(image, target_x, target_y)
-
+    
+    show_plot(processed_image)
     return processed_image
 
 def get_size(img):

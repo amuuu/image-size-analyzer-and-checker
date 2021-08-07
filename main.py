@@ -1,10 +1,20 @@
 import sys
 from process import *
 from os import walk
+from dotenv import load_dotenv
+
+load_dotenv()
 
 #######################
 
-IMG_PATH = "imgs/"
+if len(sys.argv) > 1:
+    IMG_PATH = sys.argv[1]
+    if not sys.argv[1].endswith("\\"):
+        IMG_PATH += "\\"
+else:
+    IMG_PATH = os.getenv('BASE_ASSETS_FOLDER_NAME')+"/"
+
+print("Checking this directory: " + IMG_PATH + "\n")
 
 #######################
 
@@ -28,6 +38,8 @@ for item in files:
     print()
 
 
+
+""""
 should_rescale = input("####\n\nWould you like the program to rescale images automatically? (y/n)\n")
 if (should_rescale == 'y'):
     os.mkdir(IMG_PATH + "modified_photos")
@@ -50,3 +62,5 @@ if (should_rescale == 'y'):
 
 else:
     print("Auto-rescale canceled. See you later bro/sis")
+
+"""

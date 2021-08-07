@@ -1,67 +1,20 @@
-# Fast Image Resizer
+# Image Utility
 A simple program to resize images using scikit-image.
-## How To Use
-1) Install requirements
+
+# How to Use?
+
+### 1) Install requirements:
 ```
-pip install -r requirements.txt
-```
-
-2) Open terminal and run this command:
-```
-python main.py path/to/image.jpg PROCESS_TYPE TARGET_X TARGET_Y
-```
-PROCESS_TYPE is either "rescale", "resize", or "downscale".
-
-If you wanted to rescale, just enter your desired scale after the process type. Otherwise, enter both the x and y coordinates of your target after process type.
-
-**Note:** Most of the time we use rescale.
-
-
-## EXAMPLES - ANALYZE MODE:
-```
-$ python analyze_mode.py
-1920x1080 :::: never.jpg
-~~~ rescale x from 1920 into 2048
-
-747x717 :::: gonna.png
-~~~ rescale x from 747 into 1024
-
-939x939 :::: give.jpg
-~~~ rescale x from 939 into 1024
-
-512x512 :::: you.png
-~~ ok
-
-####
-
-Would you like the program to rescale images automatically? (y/n)
-y
-Rescaling never.jpg...
-Saved new never.jpg.
-Rescaling gonna.png...
-Saved new gonna.png.
-Rescaling give.jpg...
-Saved new give.jpg.
+$ pip install -r requirements.txt
 ```
 
-## EXAMPLES - MODIFY MODE:
-
-Rescale image by given x:
+### 2) Run:
+You can use the absolute directory address:
 ```
-python modify_mode.py img.jpg rescale x=512
+$ python main.py C:\Users\RickAstley\Desktop\photos
 ```
-
-Rescale image by given scale:
+You can also put the assets folder inside the same directory as the `main.py` and just use this command:
 ```
-python modify_mode.py img.jpg rescale 0.25
+$ python main.py
 ```
-
-Resize image by given x and y:
-```
-python modify_mode.py img.jpg resize 120 145
-```
-
-Downscale image by given scales in x and y:
-```
-python modify_mode.py img.jpg downscale 0.25 0.5
-```
+Make sure to specify the name of the assets folder inside the `.env. file. The default name for images folder is `imgs/`

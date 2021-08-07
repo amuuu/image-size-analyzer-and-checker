@@ -1,2 +1,3 @@
 scikit-image
 imgio
+python-dotenv
