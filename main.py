@@ -30,13 +30,11 @@ for item in files:
     
     modify_str, modify_tuple = check_size(size)
     
-    print_str = modify_str
-
     if modify_tuple != None:
         modify_dictionary[item] = modify_tuple
-        print_str = '\033[91m' + modify_str + '\033[0m' # the wierd characters are for coloring the print string in the terminal
+        modify_str = '\033[91m' + modify_str + '\033[0m' # the weird characters are for coloring the print string in the terminal
     
-    print(print_str)
+    print(modify_str)
     print()
 
 #######################
